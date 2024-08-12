@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/gymbroo/static/js/main.0f5b31ee.js",
+    "static/media/banner.jpg": "/gymbroo/static/media/banner.b2ea606da96d0664441d.jpg",
+    "static/media/gym.png": "/gymbroo/static/media/gym.6e701417c428e2fbc267.png",
+    "index.html": "/gymbroo/index.html",
+    "main.0f5b31ee.js.map": "/gymbroo/static/js/main.0f5b31ee.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.0f5b31ee.js"
+  ]
+}
