@@ -4,9 +4,10 @@ import HeroBannerImage from '../assets/images/banner.jpg';
 
 const HeroBanner = () => {
   return (
-    <Box className="fade-in" sx={{ mt: { lg: '20px', xs: '24px' }, p: { xs: '8px', md: '12px' } }} position="relative">
-      <Grid container spacing={{ xs: 3, md: 4 }} alignItems="center">
-        <Grid item xs={12} lg={7}>
+    <Box className="fade-in" sx={{ mt: { lg: '20px', xs: '20px' }, p: { xs: '8px', md: '12px' }, overflowX: 'clip' }} position="relative">
+      <Grid container spacing={{ xs: 2.5, md: 4 }} alignItems="center">
+
+        <Grid item xs={12} lg={7} sx={{ minWidth: 0 }}>
           <Box sx={{ ml: { sm: '12px', lg: '28px' } }}>
             <Chip label="Train smarter, not harder" sx={{ mb: 1.5, bgcolor: '#ecfeff', color: '#155e75', fontWeight: 600 }} />
             <Typography
@@ -54,8 +55,8 @@ const HeroBanner = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} lg={5}>
-          <Box sx={{ textAlign: 'center', mt: { xs: 1, lg: 0 } }} className="float">
+        <Grid item xs={12} lg={5} sx={{ minWidth: 0 }}>
+          <Box sx={{ textAlign: 'center', mt: { xs: 0.5, lg: 0 }, px: { xs: 0.5, sm: 0 } }} className="float">
             <img src={HeroBannerImage} alt="Woman exercising with dumbbells" className="hero-banner-img" />
           </Box>
         </Grid>

@@ -29,6 +29,12 @@ body {
     radial-gradient(circle at 10% 0%, rgba(79, 70, 229, 0.08), transparent 45%),
     radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.08), transparent 40%),
     var(--bg);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -111,8 +117,9 @@ body {
 }
 
 .hero-banner-img {
-  width: min(100%, 430px);
-  max-height: 500px;
+  width: min(100%, 410px);
+  max-width: calc(100vw - 32px);
+  max-height: 460px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 14px 30px rgba(79, 70, 229, 0.18);
@@ -168,10 +175,19 @@ body {
 }
 
 
+@media screen and (max-width: 600px) {
+  .hero-banner-img {
+    width: min(100%, 280px);
+    max-width: calc(100vw - 24px);
+    max-height: 300px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .hero-banner-img {
-    width: min(100%, 360px);
-    max-height: 380px;
+    width: min(100%, 320px);
+    max-width: calc(100vw - 28px);
+    max-height: 340px;
   }
 }
 
