@@ -1,71 +1,62 @@
 import React from 'react';
-import { Box, Stack, Typography, Grid } from '@mui/material';
-import HeroBannerImage from '../assets/images/banner.jpg'; // Ensure the image path is correct
+import { Box, Chip, Grid, Stack, Typography } from '@mui/material';
+import HeroBannerImage from '../assets/images/banner.jpg';
 
 const HeroBanner = () => {
   return (
-    <Box sx={{ mt: { lg: '26px', xs: '70px' }, p: '20px' }} position="relative">
-      <Grid container spacing={4} alignItems="center">
-        {/* Text Section */}
+    <Box className="fade-in" sx={{ mt: { lg: '26px', xs: '30px' }, p: { xs: '8px', md: '16px' } }} position="relative">
+      <Grid container spacing={{ xs: 3, md: 5 }} alignItems="center">
         <Grid item xs={12} lg={6}>
-          <Box sx={{ ml: { sm: '50px' } }}>
-            <Typography color="#FF2625" fontWeight="600" fontSize="26px">
-              Fitness Club
-            </Typography>
+          <Box sx={{ ml: { sm: '20px', lg: '40px' } }}>
+            <Chip label="Train smarter, not harder" sx={{ mb: 2, bgcolor: '#ecfeff', color: '#155e75', fontWeight: 600 }} />
             <Typography
-              fontWeight={700}
-              sx={{ fontSize: { lg: '44px', xs: '40px' } }}
-              mb="23px"
-              mt="30px"
+              fontWeight={800}
+              sx={{
+                fontSize: { lg: '64px', md: '54px', xs: '38px' },
+                lineHeight: 1.05,
+                background: 'linear-gradient(120deg, #111827 0%, #4f46e5 60%, #06b6d4 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+              mb="18px"
             >
-              Sweat, Smile <br />
-              And Repeat
+              Elevate Your
+              <br />
+              Fitness Journey
             </Typography>
-            <Typography fontSize="22px" fontFamily="Alegreya" lineHeight="35px">
-              Check out the most effective exercises personalized to you
+
+            <Typography fontSize={{ xs: '18px', md: '22px' }} fontFamily="Alegreya" lineHeight="1.5" color="#4b5563" maxWidth="580px">
+              Discover professional workout routines, target the right muscle groups, and stay consistent with guidance designed for real results.
             </Typography>
-            <Stack>
+
+            <Stack direction="row" spacing={2.5} alignItems="center" mt={4}>
               <a
                 href="#exercises"
                 style={{
-                  marginTop: '45px',
                   textDecoration: 'none',
-                  width: '200px',
+                  minWidth: '220px',
                   textAlign: 'center',
-                  background: '#FF2625',
-                  padding: '14px',
-                  fontSize: '22px',
-                  textTransform: 'none',
-                  color: 'white',
-                  borderRadius: '4px',
+                  background: 'linear-gradient(120deg, #4f46e5 0%, #06b6d4 100%)',
+                  padding: '13px 20px',
+                  fontSize: '19px',
+                  fontWeight: 700,
+                  color: '#fff',
+                  borderRadius: '999px',
+                  boxShadow: '0 15px 34px rgba(79, 70, 229, 0.35)',
                 }}
               >
                 Explore Exercises
               </a>
+              <Typography color="#6b7280" sx={{ display: { xs: 'none', md: 'block' } }}>
+                1300+ movements available
+              </Typography>
             </Stack>
-            <Typography
-              fontWeight={600}
-              color="#FF2625"
-              sx={{
-                opacity: '0.1',
-                display: { lg: 'block', xs: 'none' },
-                fontSize: '172px',
-              }}
-            >
-              Exercise
-            </Typography>
           </Box>
         </Grid>
-        
-        {/* Image Section */}
+
         <Grid item xs={12} lg={6}>
-          <Box sx={{ textAlign: 'center' }}>
-            <img
-              src={HeroBannerImage}
-              alt="hero-banner"
-              className="hero-banner-img"
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
+          <Box sx={{ textAlign: 'center' }} className="float">
+            <img src={HeroBannerImage} alt="Woman exercising with dumbbells" className="hero-banner-img" />
           </Box>
         </Grid>
       </Grid>

@@ -6,12 +6,14 @@ import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
 import Loader from './Loader';
 
-const Exercises = ({ exercises=[], setExercises, bodyPart }) => {
+const Exercises = ({ exercises = [], setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchExercisesData = async () => {
+      setLoading(true);
       let exercisesData = [];
 
       if (bodyPart === 'all') {
@@ -21,45 +23,70 @@ const Exercises = ({ exercises=[], setExercises, bodyPart }) => {
       }
 
       setExercises(exercisesData);
+      setCurrentPage(1);
+      setLoading(false);
     };
 
     fetchExercisesData();
   }, [bodyPart, setExercises]);
 
-  // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
   const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
   const paginate = (event, value) => {
     setCurrentPage(value);
-
     window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
 
-  if (!currentExercises.length) return <Loader />;
+  if (loading) return <Loader />;
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
-      <Typography variant="h4" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="46px">Showing Results</Typography>
-      <Stack direction="row" sx={{ gap: { lg: '107px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
-        {currentExercises.map((exercise, idx) => (
-          <ExerciseCard key={idx} exercise={exercise} />
-        ))}
-      </Stack>
-      <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
-        {exercises.length > 9 && (
-          <Pagination
-            color="standard"
-            shape="rounded"
-            defaultPage={1}
-            count={Math.ceil(exercises.length / exercisesPerPage)}
-            page={currentPage}
-            onChange={paginate}
-            size="large"
-          />
-        )}
-      </Stack>
+    <Box id="exercises" className="fade-in" sx={{ mt: { lg: '90px' } }} mt="40px" p="20px">
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        sx={{
+          fontSize: { lg: '44px', xs: '30px' },
+          background: 'linear-gradient(120deg, #111827 0%, #4338ca 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+        mb="8px"
+      >
+        Showing Results
+      </Typography>
+
+      <Typography color="#6b7280" mb="34px" sx={{ fontSize: '1.06rem' }}>
+        {exercises.length} exercises found for <b style={{ color: '#4338ca' }}>{bodyPart}</b>
+      </Typography>
+
+      {exercises.length === 0 ? (
+        <Typography sx={{ fontSize: '20px', color: '#4b5563', p: 2, background: '#fff', borderRadius: '12px', border: '1px solid #e5e7eb' }}>
+          No exercises found. Try another keyword or body part.
+        </Typography>
+      ) : (
+        <>
+          <Stack direction="row" sx={{ gap: { lg: '34px', xs: '24px' } }} flexWrap="wrap" justifyContent="center">
+            {currentExercises.map((exercise, idx) => (
+              <ExerciseCard key={idx} exercise={exercise} />
+            ))}
+          </Stack>
+          <Stack sx={{ mt: { lg: '80px', xs: '50px' } }} alignItems="center">
+            {exercises.length > exercisesPerPage && (
+              <Pagination
+                color="primary"
+                shape="rounded"
+                defaultPage={1}
+                count={Math.ceil(exercises.length / exercisesPerPage)}
+                page={currentPage}
+                onChange={paginate}
+                size="large"
+              />
+            )}
+          </Stack>
+        </>
+      )}
     </Box>
   );
 };
