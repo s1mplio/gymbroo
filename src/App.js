@@ -8,7 +8,7 @@ import Footer from './component/Footer';
 
 const App = () => {
   return (
-    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+    <Box sx={{ width: { xs: '100%', xl: '1488px' }, px: { xs: 1, md: 2 } }} m="auto">
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
