@@ -117,8 +117,8 @@ body {
 }
 
 .hero-banner-img {
-  width: clamp(220px, 34vw, 380px);
-  max-width: calc(100vw - 36px);
+  width: clamp(260px, 42vw, 500px);
+  max-width: min(500px, calc(100vw - 32px));
   aspect-ratio: 4 / 5;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -177,15 +177,15 @@ body {
 
 @media screen and (max-width: 900px) {
   .hero-banner-img {
-    width: min(100%, 320px);
-    max-width: calc(100vw - 30px);
+    width: min(100%, 380px);
+    max-width: calc(100vw - 24px);
   }
 }
 
 @media screen and (max-width: 600px) {
   .hero-banner-img {
-    width: min(100%, 270px);
-    max-width: calc(100vw - 24px);
+    width: min(100%, 320px);
+    max-width: calc(100vw - 20px);
   }
 }
 
