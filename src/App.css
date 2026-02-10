@@ -117,12 +117,12 @@ body {
 }
 
 .hero-banner-img {
-  width: min(100%, 410px);
-  max-width: calc(100vw - 32px);
-  max-height: 460px;
-  border-radius: 20px;
+  width: clamp(220px, 34vw, 380px);
+  max-width: calc(100vw - 36px);
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 14px 30px rgba(79, 70, 229, 0.18);
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.16);
   object-fit: cover;
 }
 
@@ -175,19 +175,17 @@ body {
 }
 
 
-@media screen and (max-width: 600px) {
-  .hero-banner-img {
-    width: min(100%, 280px);
-    max-width: calc(100vw - 24px);
-    max-height: 300px;
-  }
-}
-
 @media screen and (max-width: 900px) {
   .hero-banner-img {
     width: min(100%, 320px);
-    max-width: calc(100vw - 28px);
-    max-height: 340px;
+    max-width: calc(100vw - 30px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-banner-img {
+    width: min(100%, 270px);
+    max-width: calc(100vw - 24px);
   }
 }
 
