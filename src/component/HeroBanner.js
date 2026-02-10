@@ -4,45 +4,45 @@ import HeroBannerImage from '../assets/images/banner.jpg';
 
 const HeroBanner = () => {
   return (
-    <Box className="fade-in" sx={{ mt: { lg: '26px', xs: '30px' }, p: { xs: '8px', md: '16px' } }} position="relative">
-      <Grid container spacing={{ xs: 3, md: 5 }} alignItems="center">
-        <Grid item xs={12} lg={6}>
-          <Box sx={{ ml: { sm: '20px', lg: '40px' } }}>
-            <Chip label="Train smarter, not harder" sx={{ mb: 2, bgcolor: '#ecfeff', color: '#155e75', fontWeight: 600 }} />
+    <Box className="fade-in" sx={{ mt: { lg: '20px', xs: '24px' }, p: { xs: '8px', md: '12px' } }} position="relative">
+      <Grid container spacing={{ xs: 3, md: 4 }} alignItems="center">
+        <Grid item xs={12} lg={7}>
+          <Box sx={{ ml: { sm: '12px', lg: '28px' } }}>
+            <Chip label="Train smarter, not harder" sx={{ mb: 1.5, bgcolor: '#ecfeff', color: '#155e75', fontWeight: 600 }} />
             <Typography
               fontWeight={800}
               sx={{
-                fontSize: { lg: '64px', md: '54px', xs: '38px' },
-                lineHeight: 1.05,
+                fontSize: { lg: '56px', md: '46px', xs: '34px' },
+                lineHeight: 1.08,
                 background: 'linear-gradient(120deg, #111827 0%, #4f46e5 60%, #06b6d4 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
-              mb="18px"
+              mb="14px"
             >
               Elevate Your
               <br />
               Fitness Journey
             </Typography>
 
-            <Typography fontSize={{ xs: '18px', md: '22px' }} fontFamily="Alegreya" lineHeight="1.5" color="#4b5563" maxWidth="580px">
+            <Typography fontSize={{ xs: '17px', md: '20px' }} fontFamily="Alegreya" lineHeight="1.5" color="#4b5563" maxWidth="560px">
               Discover professional workout routines, target the right muscle groups, and stay consistent with guidance designed for real results.
             </Typography>
 
-            <Stack direction="row" spacing={2.5} alignItems="center" mt={4}>
+            <Stack direction="row" spacing={2} alignItems="center" mt={3} flexWrap="wrap" useFlexGap>
               <a
                 href="#exercises"
                 style={{
                   textDecoration: 'none',
-                  minWidth: '220px',
+                  minWidth: '200px',
                   textAlign: 'center',
                   background: 'linear-gradient(120deg, #4f46e5 0%, #06b6d4 100%)',
-                  padding: '13px 20px',
-                  fontSize: '19px',
+                  padding: '12px 18px',
+                  fontSize: '18px',
                   fontWeight: 700,
                   color: '#fff',
                   borderRadius: '999px',
-                  boxShadow: '0 15px 34px rgba(79, 70, 229, 0.35)',
+                  boxShadow: '0 12px 26px rgba(79, 70, 229, 0.28)',
                 }}
               >
                 Explore Exercises
@@ -54,8 +54,8 @@ const HeroBanner = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} lg={6}>
-          <Box sx={{ textAlign: 'center' }} className="float">
+        <Grid item xs={12} lg={5}>
+          <Box sx={{ textAlign: 'center', mt: { xs: 1, lg: 0 } }} className="float">
             <img src={HeroBannerImage} alt="Woman exercising with dumbbells" className="hero-banner-img" />
           </Box>
         </Grid>
